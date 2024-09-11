@@ -21,8 +21,6 @@ public class User {
     private String password;
     private String phone;
     private Rol rol;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Product product;
 
     public enum Rol {
         ADMIN, USER
