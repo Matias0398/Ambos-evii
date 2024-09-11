@@ -20,9 +20,11 @@ public class Product {
     private Long id;
     private String name;
     private Double price;
+
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Image> image;
-    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToOne
+    @JoinColumn(name = "size_id")
     private Size size;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
